@@ -1,0 +1,20 @@
+{
+  "name": "golfteam",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "BSD",
+  "description": "ERROR: No README.md file found!",
+  "dependencies": {
+    "union": "~0.3.4",
+    "resourceful": "~0.2.2",
+    "ecstatic": "~0.1.6",
+    "connect": "~2.4.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "zombie": "*"
+  }
+}

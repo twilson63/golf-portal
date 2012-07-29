@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+  ul.breadcrumb
+    li.active Home
+  div.container.content
+    div.hero-unit
+      h1 Players
+    div.row
+      div.span8.offset2
+        div.pull-right(style="margin-bottom: 20px;")
+          a.btn.btn-primary(href="/admin/players/new") New Player
+        table.table.table-bordered
+          tr
+            th Name
+            th Details
+            th Created
+            th Updated
+            th Edit
+          each player in players
+            tr
+              td= player.name
+              td= player.body
+              td= (new Date(player.ctime)).toString()
+              td= (new Date(player.utime)).toString()
+              td 
+                a.btn.btn-primary(href="/admin/players/#{player.id}/edit") Edit

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  ul.breadcrumb
+    li
+      a(href="/") Home
+      span.divider /
+    li.active= post.title
+  div.container.content
+    div.hero-unit: h1= post.title
+    div.row: div.span8.offset2= post.body

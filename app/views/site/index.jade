@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  ul.breadcrumb
+    li.active Home
+  div.container.content
+    div.hero-unit
+      h1 Boys Golf Team
+      p Fort Dorchester High School
+    div.row
+      div.container
+        h2 News
+    div.row
+      div.container
+        each post in posts
+          article
+            header: h1: a(href="/posts/#{post.id}")= post.title
+            div.body= post.body

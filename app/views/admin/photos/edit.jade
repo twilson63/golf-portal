@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  div.container.content
+    div.span9.offset1
+      h1 Edit Photo
+      form.well(action="/admin/photos/#{photo.id}", method="POST")
+        //input(type="hidden", name="method", value="PUT")
+        p
+          label(for="name") Name
+          input#title.span7(type="text", name="name", placeholder="Enter Name for Photo", value="#{photo.name}")
+        p
+          textarea#body.span7(name="body", placeholder="Enter your photo details here - Markdown is supported.")= photo.body
+        p
+          label(for="photo") Photo
+          input#photo(type="file", name="photo")
+        p
+          button Submit Photo

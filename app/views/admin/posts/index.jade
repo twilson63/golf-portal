@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+  ul.breadcrumb
+    li.active Home
+  div.container.content
+    div.hero-unit
+      h1 News
+    div.row
+      div.span8.offset2
+        div.pull-right(style="margin-bottom: 20px;")
+          a.btn.btn-primary(href="/admin/posts/new") New Post
+        table.table.table-bordered
+          tr
+            th Title
+            th Body
+            th Created
+            th Updated
+            th Edit
+          each post in posts
+            tr
+              td= post.title
+              td= post.body
+              td= (new Date(post.ctime)).toString()
+              td= post.utime
+              td 
+                a.btn.btn-primary(href="/admin/posts/#{post.id}/edit") Edit

@@ -1,0 +1,15 @@
+
+extends ../layout
+
+block content
+  ul.breadcrumb
+    li.active Home
+  div.container.content
+    div.hero-unit
+      h1 News
+    div.row
+      div.container
+        each post in posts
+          article
+            header: h1: a(href="/posts/#{post.id}")= post.title
+            div.body= post.body

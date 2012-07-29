@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  div.container.content
+    div.hero-unit
+      h1 Players
+    div.row
+      div.container
+        each player in players
+          article
+            header: h1: a(href="/players/#{player.id}")= player.name
+            div.body= player.bio

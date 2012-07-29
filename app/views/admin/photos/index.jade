@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content
+  ul.breadcrumb
+    li.active Home
+  div.container.content
+    div.hero-unit
+      h1 Photos
+    div.row
+      div.span8.offset2
+        div.pull-right(style="margin-bottom: 20px;")
+          a.btn.btn-primary(href="/admin/photos/new") New Photo
+        table.table.table-bordered
+          tr
+            th Title
+            th Description
+            th Created
+            th Updated
+            th Edit
+          each photo in photos
+            tr
+              td= photo.title
+              td= photo.body
+              td= (new Date(photo.ctime)).toString()
+              td= (new Date(photo.utime)).toString()
+              td: a.btn.btn-primary(href="/admin/photos/#{photo.id}/edit") Edit

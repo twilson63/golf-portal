@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  div.container.content
+    div.span9.offset1
+      h1 New Post
+      form.well(action="/admin/posts", method="POST")
+        p
+          label(for="title") Title
+          input#title.span7(type="text", name="title", placeholder="Enter Title for Post")
+        p
+          textarea#body.span7(name="body", placeholder="Enter your post details here - Markdown is supported.")
+        p
+          button Submit Post
+          

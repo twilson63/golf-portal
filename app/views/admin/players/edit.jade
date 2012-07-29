@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  div.container.content
+    div.span9.offset1
+      h1 Edit Player
+      form.well(action="/admin/players/#{player.id}", method="POST")
+        //input(type="hidden", name="method", value="PUT")
+        p
+          label(for="name") Name
+          input#title.span7(type="text", name="name", placeholder="Enter Name for Player", value="#{player.name}")
+        p
+          textarea#body.span7(name="body", placeholder="Enter your player details here - Markdown is supported.")= player.body
+        p
+          button Submit Player

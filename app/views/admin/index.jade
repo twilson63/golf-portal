@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  ul.breadcrumb
+    li.active Admin
+  div.container.content
+    div.hero-unit
+      h1 Admin Panel
+    div.span4.well
+      h2: a(href="/admin/posts") Posts
+    div.span4.well
+      h2: a(href="/admin/players") Players
+    div.span4.well
+      h2: a(href="/admin/photos") Photos
+    div.span4.well
+      h2: a(href="/admin/events") Events
+    

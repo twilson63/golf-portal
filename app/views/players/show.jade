@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  ul.breadcrumb
+    li
+      a(href="/") Home
+      span.divider /
+    li
+      a(href="/players") Players
+      span.divider /
+
+    li.active= player.name
+  div.container.content
+    div.hero-unit: h1= player.name

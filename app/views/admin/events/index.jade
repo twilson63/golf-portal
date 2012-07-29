@@ -1,0 +1,29 @@
+extends ../../layout
+
+block content
+  ul.breadcrumb
+    li.active Home
+  div.container.content
+    div.hero-unit
+      h1 Events
+    div.row
+      div.span8.offset2
+        div.pull-right(style="margin-bottom: 20px;")
+          a.btn.btn-primary(href="/admin/posts/new") New Event
+        table.table.table-bordered
+          tr
+            th Title
+            th Date
+            th Location
+            th Created
+            th Updated
+            th Edit
+          each event in events
+            tr
+              td= event.title
+              td= (new Date(event.eventDate)).toString()
+              td= event.location
+              td= (new Date(event.ctime)).toString()
+              td= (new Date(event.utime)).toString()
+              td 
+                a.btn.btn-primary(href="/admin/events/#{event.id}/edit") Edit
