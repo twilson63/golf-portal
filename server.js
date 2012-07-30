@@ -9,10 +9,8 @@ app.http.before = [
   ecstatic(__dirname + '/public', { autoIndex: false })];
 // Possible better api
 //app.controllers(['app', 'site', 'posts']);
-
-//['site', 'news','players','events','photos', 'sponsors'].foreach(function(controller) {
-['site', 'posts', 'players', 'photos',
-'admin/posts','admin/players', 'admin/photos'].forEach(function(controller) {
+['site', 'posts', 'players', 'photos', 'events',
+'admin/posts','admin/players', 'admin/photos', 'admin/events'].forEach(function(controller) {
   require('./app/controllers/' + controller)(app);
 });
 

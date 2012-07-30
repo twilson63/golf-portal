@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  ul.breadcrumb
+    li: a(href="/") Home
+    li.active Events
+  div.container.content
+    div.hero-unit
+      h1 Events
+    div.row
+      div.container
+        each event in events
+          article
+            header: h1= event.title

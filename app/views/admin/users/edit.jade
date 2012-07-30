@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  div.container.content
+    div.span9.offset1
+      h1 Edit User
+      form.well(action="/admin/users/#{user.id}", method="POST")
+        p
+          label(for="username") UserName
+          input#username.span7(type="text", name="username", value="#{user.username}", placeholder="Enter UserName")
+        p
+          label(for="email") Email
+          input#email.span7(type="email", name="email", value="#{user.email}", placeholder="user@email.com")
+
+        p
+          button Submit User

@@ -1,0 +1,28 @@
+extends ../../layout
+
+block content
+  ul.breadcrumb
+    li
+      a(href="/admin/index") Admin Panel
+      span.separator /
+    li.active Users
+  div.container.content
+    div.hero-unit
+      h1 Users
+    div.row
+      div.span8.offset2
+        div.pull-right(style="margin-bottom: 20px;")
+          a.btn.btn-primary(href="/admin/users/new") New User
+        table.table.table-bordered
+          tr
+            th username
+            th email
+            th Created
+            th Edit
+          each user in users
+            tr
+              td= user.username
+              td= user.email
+              td= (new Date(user.ctime)).toString()
+              td 
+                a.btn.btn-primary(href="/admin/users/#{user.id}/edit") Edit
